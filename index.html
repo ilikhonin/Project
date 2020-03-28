@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evets</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <form action="#">
+        <legend>Введите Ваше имя (без цифр)</legend>
+        <input type="text" onkeydown="return checkStringKey(event.key)" placeholder="Ваше имя" width=55 id="name">
+    </form>
+
+
+    <script>
+        function checkStringKey(key) {
+        return (key >= 'a' && key <= 'z') || (key >= 'а' && key <= 'я' ) || 
+        (key >= 'A' && key <= 'Z') || (key >= 'А' && key <= 'Я' ) || 
+        key == 'Delete' || key == 'Backspace' || key == 'ArrowLeft' ||
+        key == 'ArrowRight';
+        }            
+    </script>
+
+
+
+    <div class="zad2">
+
+        <button type="submit" class="open">Открыть</button>
+
+        <div class="cart">
+        <div class="modal">
+            <h2>Ты открыл модальное окно!</h2>
+            <button type="submit" class="close">Закрыть</button>
+        </div>
+    </div>
+       
+    </div>
+
+<script>
+    let cart = document.querySelector('.cart'),
+        close = document.querySelector('.close');
+        openBtn = document.querySelector('.open');
+
+    function openCart() {
+        cart.style.display = 'block';
+    }
+    function closeCart() {
+        cart.style.display = 'none';
+    }
+
+    openBtn.addEventListener('click', openCart);
+    close.addEventListener('click', closeCart);
+
+</script>
+
+
+
+    
+</body>
+</html>
